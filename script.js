@@ -1,3 +1,6 @@
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 function displayBigMenu(menuState) {
   if (menuState) {
       $('.side-menu').css({
@@ -7,7 +10,7 @@ function displayBigMenu(menuState) {
           width: '13.438rem',
           'text-align': 'center'
       });
-      $('.side-menu .side-bar a.menubutton').attr('data-toggle', "");
+      $('.side-menu .side-bar a.menubutton').attr('data-bs-toggle', "");
       $('.side-menu .side-bar a.menubutton').attr('title', "");
       $('.closeMenuButton').css({
           display: 'block'
@@ -23,7 +26,7 @@ function displayBigMenu(menuState) {
           width: '3rem',
           'text-align': 'center'
       });
-      $('.side-menu .side-bar a.menubutton').attr('data-toggle', "tooltip");
+      $('.side-menu .side-bar a.menubutton').attr('data-bs-toggle', "tooltip");
       $('.closeMenuButton').css({
           display: 'none'
       });
